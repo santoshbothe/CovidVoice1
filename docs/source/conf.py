@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # python_speech_features documentation build configuration file, created by
-# sphinx-quickstart on Thu Oct 31 16:49:58 2013.
+# sphinx-quickstart (Santosh Bothe) on Sat Aug 15 16:49:58 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
