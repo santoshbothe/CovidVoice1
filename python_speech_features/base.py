@@ -1,5 +1,5 @@
 # calculate filterbank features. Provides e.g. fbank and mfcc features for use in ASR applications
-# Author: James Lyons 2012
+# Author: Santosh Bothe 2020
 from __future__ import division
 import numpy
 from python_speech_features import sigproc
@@ -50,7 +50,7 @@ def mfcc(signal,samplerate=16000,winlen=0.025,winstep=0.01,numcep=13,
     if appendEnergy: feat[:,0] = numpy.log(energy) # replace first cepstral coefficient with log of frame energy
     return feat
 
-def fbank(signal,samplerate=16000,winlen=0.025,winstep=0.01,
+def fbank(signal,samplerate=41000,winlen=0.025,winstep=0.01,
           nfilt=26,nfft=512,lowfreq=0,highfreq=None,preemph=0.97,
           winfunc=lambda x:numpy.ones((x,))):
     """Compute Mel-filterbank energy features from an audio signal.
@@ -81,7 +81,7 @@ def fbank(signal,samplerate=16000,winlen=0.025,winstep=0.01,
 
     return feat,energy
 
-def logfbank(signal,samplerate=16000,winlen=0.025,winstep=0.01,
+def logfbank(signal,samplerate=41000,winlen=0.025,winstep=0.01,
              nfilt=26,nfft=512,lowfreq=0,highfreq=None,preemph=0.97,
              winfunc=lambda x:numpy.ones((x,))):
     """Compute log Mel-filterbank energy features from an audio signal.
@@ -101,7 +101,7 @@ def logfbank(signal,samplerate=16000,winlen=0.025,winstep=0.01,
     feat,energy = fbank(signal,samplerate,winlen,winstep,nfilt,nfft,lowfreq,highfreq,preemph,winfunc)
     return numpy.log(feat)
 
-def ssc(signal,samplerate=16000,winlen=0.025,winstep=0.01,
+def ssc(signal,samplerate=41000,winlen=0.025,winstep=0.01,
         nfilt=26,nfft=512,lowfreq=0,highfreq=None,preemph=0.97,
         winfunc=lambda x:numpy.ones((x,))):
     """Compute Spectral Subband Centroid features from an audio signal.
@@ -146,7 +146,7 @@ def mel2hz(mel):
     """
     return 700*(10**(mel/2595.0)-1)
 
-def get_filterbanks(nfilt=20,nfft=512,samplerate=16000,lowfreq=0,highfreq=None):
+def get_filterbanks(nfilt=20,nfft=512,samplerate=41000,lowfreq=0,highfreq=None):
     """Compute a Mel-filterbank. The filters are stored in the rows, the columns correspond
     to fft bins. The filters are returned as an array of size nfilt * (nfft/2 + 1)
 
