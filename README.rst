@@ -1,5 +1,5 @@
 ======================
-python_speech_features
+Daksh python_speech_features
 ======================
 
 This library provides common speech features for ASR including MFCCs and filterbank energies.
@@ -8,7 +8,6 @@ If you are not sure what MFCCs are, and would like to know more have a look at t
 
 `Project Documentation <http://python-speech-features.readthedocs.org/en/latest/>`_
 
-To cite, please use: James Lyons et al. (2020, January 14). jameslyons/python_speech_features: release v0.6.1 (Version 0.6.1). Zenodo. http://doi.org/10.5281/zenodo.3607820
 
 Installation
 ============
@@ -25,20 +24,6 @@ From this repository::
 	git clone https://github.com/jameslyons/python_speech_features
 	python setup.py develop
 
-
-Usage
-=====
-
-Supported features:
-
-- Mel Frequency Cepstral Coefficients
-- Filterbank Energies
-- Log Filterbank Energies
-- Spectral Subband Centroids
-
-`Example use <example.py>`_
-
-From here you can write the features to a file etc.
 
 
 MFCC Features
@@ -98,10 +83,3 @@ preemph			apply preemphasis filter with preemph as coefficient. 0 is no filter. 
 returns			A numpy array of size (NUMFRAMES by nfilt) containing features. Each row holds 1 feature vector. The second return value is the energy in each frame (total energy, unwindowed)
 =============	===========
 
-
-Reference
-=========
-sample english.wav obtained from::
-
-	wget http://voyager.jpl.nasa.gov/spacecraft/audio/english.au
-	sox english.au -e signed-integer english.wav
