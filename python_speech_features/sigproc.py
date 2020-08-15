@@ -1,5 +1,5 @@
 # This file includes routines for basic signal processing including framing and computing power spectra.
-# Author: James Lyons 2012
+# Author: Santosh Bothe 2020
 import decimal
 
 import numpy
